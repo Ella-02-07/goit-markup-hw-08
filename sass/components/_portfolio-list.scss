@@ -1,0 +1,105 @@
+.section-example {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+// Button list
+.button-list {
+  display: flex;
+  margin-bottom: 50px;
+  justify-content: center;
+}
+
+.button-list__btn {
+  padding: 6px 22px;
+
+  background-color: $color-button-item-bgd;
+  font-family: inherit;
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  letter-spacing: 0.03em;
+  border-radius: 4px;
+  @extend%pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    background-color: $color-accent;
+    color: $color-element;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 3px 1px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.button-list__item:not(:first-child) {
+  margin-left: 8px;
+}
+
+// Photo list
+
+.photo-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.photo-list__link {
+  display: block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      0px 1px 1px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.thumb-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.thumb-overlay__descr {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: $color-element;
+  background-color: rgba(33, 150, 243, 0.9);
+  padding: 63px 24px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55;
+
+  .photo-list__link:hover &,
+  .photo-list__link:focus & {
+    transform: translateY(0);
+  }
+}
+
+.photo-descr {
+  padding: 20px 24px;
+  border-right: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+  border-left: 1px solid $color-border;
+}
+
+.photo-descr__title {
+  color: $color-text-primary;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+
+  margin-bottom: 4px;
+}
+.photo-descr__text {
+  color: $color-text-descr;
+  font-size: 16px;
+  line-height: 1.88;
+}

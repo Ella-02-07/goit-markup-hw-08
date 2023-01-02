@@ -1,0 +1,36 @@
+.work {
+  padding: 0 0 94px 0;
+}
+
+.work__title {
+  @extend %title-h2;
+}
+
+.work-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.thumb {
+  position: relative;
+}
+
+.thumb__descr {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  height: 70px;
+  width: 370px;
+  padding-top: 27px;
+  padding-bottom: 27px;
+
+  background-color: rgba(47, 48, 58, 0.8);
+  color: $color-element;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  text-align: center;
+}
