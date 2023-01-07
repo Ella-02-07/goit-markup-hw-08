@@ -1,17 +1,37 @@
 .section-client {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 .client {
   display: flex;
-  /* gap: 30px; */
-  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+  // justify-content: space-between;
+  @media screen and (min-width: 1200px) {
+    flex-wrap: nowrap;
+  }
 }
 
 .client__item {
-  flex-basis: calc((100% - 150px) / 6);
-  height: 92px;
+  @media screen and (max-width: 767px) {
+    flex-basis: calc((100% - 30px) / 2);
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-basis: calc((100% - 60px) / 3);
+  }
+
+  @media screen and (min-width: 1200px) {
+    flex-basis: calc((100% - 150px) / 6);
+  }
+
+  max-height: 92px;
 }
 
 .client__link {

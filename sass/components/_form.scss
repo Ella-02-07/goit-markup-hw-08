@@ -1,6 +1,14 @@
 .form {
-  position: absolute;
-  width: 448px;
+  @media screen and (min-width: 480px) {
+    position: absolute;
+    max-width: 370px;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 448px;
+    width: 100%;
+  }
 }
 
 .form-title {
@@ -81,6 +89,11 @@
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: $color-text-descr;
+
+  @media screen and (max-width: 1199px) {
+    font-size: 12px;
+    line-height: 1.16;
+  }
 }
 
 .form__checkbox {
@@ -122,6 +135,11 @@
   color: $color-accent;
   text-decoration: underline;
   text-decoration-skip-ink: none;
+
+  @media screen and (max-width: 1199px) {
+    font-size: 12px;
+    line-height: 1.16;
+  }
 }
 
 .form__button {
