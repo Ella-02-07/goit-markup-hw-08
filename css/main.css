@@ -371,7 +371,6 @@ img {
   padding-top: 118px;
   padding-bottom: 118px;
   text-align: center;
-  outline: 1px solid tomato;
 }
 @media screen and (min-width: 1200px) {
   .hero {
