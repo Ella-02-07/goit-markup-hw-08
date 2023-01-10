@@ -1,18 +1,28 @@
+// .hero {
+//   padding-top: 118px;
+//   padding-bottom: 118px;
+//   text-align: center;
+
+//   @media screen and (min-width: 1200px) {
+//     padding-top: 200px;
+//     padding-bottom: 200px;
+//   }
+// }
+
 .hero {
+  margin-left: auto;
+  margin-right: auto;
+
   padding-top: 118px;
   padding-bottom: 118px;
   text-align: center;
+  max-width: 1600px;
 
   @media screen and (min-width: 1200px) {
     padding-top: 200px;
     padding-bottom: 200px;
   }
-}
 
-.hero--overlay {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1600px;
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url(../images/hero-mobile@1x.jpg);
   background-size: cover;
