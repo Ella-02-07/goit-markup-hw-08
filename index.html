@@ -15,57 +15,82 @@
     />
     <link rel="stylesheet" href="./css/main.min.css" />
   </head>
-  <body>
+  <body style>
     <!-- Шапка сторінки -->
     <header class="page-header">
       <div class="container container--nav">
-        <a href="index.html" class="logo"><span class="logo__color">Web</span>Studio</a>
-        <div class="container-menu container-menu--is-open" data-menu>
-          <nav>
-            <ul class="nav">
-              <li class="nav__item nav__item--current">
-                <a href="#" class="nav__link nav__link--current">Студія</a>
-              </li>
-              <li class="nav__item"><a href="./portfolio.html" class="nav__link">Портфоліо</a></li>
-              <li class="nav__item"><a href="#" class="nav__link">Контакти</a></li>
-            </ul>
-          </nav>
-
-          <ul class="contacts">
-            <li class="contacts__item">
-              <a href="mailto:info@devstudio.com" class="contacts__link"
-                ><svg class="contacts__icon" width="16px" height="12px">
-                  <use href="./images/icons.svg#icon-envelope-1"></use>
-                </svg>
-                info@devstudio.com</a
-              >
+        <nav class="nav-logo">
+          <a href="index.html" class="logo"><span class="logo__color">Web</span>Studio</a>
+          <ul class="nav">
+            <li class="nav__item nav__item--current">
+              <a href="#" class="nav__link nav__link--current">Студія</a>
             </li>
-            <li class="contacts__item">
-              <a href="tel:+380961111111" class="contacts__link"
-                ><svg class="contacts__icon" width="10px" height="16px">
-                  <use href="./images/icons.svg#icon-smartphone-1"></use>
-                </svg>
-                +38 (096) 111 11 11
-              </a>
-            </li>
+            <li class="nav__item"><a href="./portfolio.html" class="nav__link">Портфоліо</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">Контакти</a></li>
           </ul>
+        </nav>
 
-          <ul class="mobmenu-social">
-            <li><a href="" class="mobmenu-social__link">Instagram</a></li>
-            <li><a href="" class="mobmenu-social__link">Twitter</a></li>
-            <li><a href="" class="mobmenu-social__link">Facebook</a></li>
-            <li><a href="" class="mobmenu-social__link">LinkedIn</a></li>
-          </ul>
-        </div>
+        <ul class="contacts">
+          <li class="contacts__item">
+            <a href="mailto:info@devstudio.com" class="contacts__link"
+              ><svg class="contacts__icon contacts__icon--small" width="16px" height="12px">
+                <use href="./images/icons.svg#icon-envelope-1"></use>
+              </svg>
+              info@devstudio.com</a
+            >
+          </li>
+          <li class="contacts__item">
+            <a href="tel:+380961111111" class="contacts__link"
+              ><svg class="contacts__icon contacts__icon--little" width="10px" height="16px">
+                <use href="./images/icons.svg#icon-smartphone-1"></use>
+              </svg>
+              +38 (096) 111 11 11
+            </a>
+          </li>
+        </ul>
 
-        <button type="button" class="menu-button menu-button--is-open" data-menu-button>
-          <svg width="40px" height="40px" aria-label="Перемикач мобільного меню">
-            <use class="menu-button__open" href="./images/icons.svg#icon-menu"></use>
-            <use class="menu-button__close" href="./images/icons.svg#icon-close-menu"></use>
+        <button class="menu-toggle js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg width="40px" height="40px">
+            <use class="icon-open" href="./images/icons.svg#icon-menu"></use>
           </svg>
         </button>
       </div>
     </header>
+    <div class="menu-container js-menu-container" id="mobile-menu">
+      <button class="menu-toggle menu-container__menu-toggle js-close-menu">
+        <svg width="40px" height="40px">
+          <use href="./images/icons.svg#icon-close-menu"></use>
+        </svg>
+      </button>
+      <div class="mobile-menu">
+        <ul class="mob-nav">
+          <li class="mob-nav__item">
+            <a class="mob-nav__link mob-nav__link--current" href="#">Студія</a>
+          </li>
+          <li class="mob-nav__item">
+            <a class="mob-nav__link" href="./portfolio.html">Портфоліо</a>
+          </li>
+          <li class="mob-nav__item"><a class="mob-nav__link" href="#">Контакти</a></li>
+        </ul>
+
+        <ul class="mob-contacts">
+          <li class="mob-contacts__item">
+            <a class="mob-contacts__link mob-contacts__link--current" href="tel:+380961111111">
+              +38 (096) 111 11 11</a
+            >
+          </li>
+          <li class="mob-contacts__item">
+            <a class="mob-contacts__link" href="mailto:info@devstudio.com"> info@devstudio.com </a>
+          </li>
+        </ul>
+      </div>
+      <ul class="mob-social">
+        <li class="mob-social__item"><a href="" class="mob-social__link">Instagram</a></li>
+        <li class="mob-social__item"><a href="" class="mob-social__link">Twitter</a></li>
+        <li class="mob-social__item"><a href="" class="mob-social__link">Facebook</a></li>
+        <li class="mob-social__item"><a href="" class="mob-social__link">LinkedIn</a></li>
+      </ul>
+    </div>
     <main>
       <!-- Герой -->
       <section class="hero hero--overlay">
@@ -135,19 +160,34 @@
           <ul class="work-list">
             <li>
               <div class="thumb">
-                <img src="./images/box1.jpg" alt="Розробка додатка десктоп" width="370" />
+                <img
+                  srcset="./images/box1@1x.jpg 1x, ./images/box1@2x.jpg 2x"
+                  src="./images/box1@1x.jpg"
+                  alt="Розробка додатка десктоп"
+                  width="370"
+                />
                 <p class="thumb__descr">Десктопні додатки</p>
               </div>
             </li>
             <li>
               <div class="thumb">
-                <img src="./images/box2.jpg" alt="Розробка веб додатка" width="370" />
+                <img
+                  srcset="./images/box2@1x.jpg 1x, ./images/box2@2x.jpg 2x"
+                  src="./images/box2@1x.jpg"
+                  alt="Розробка веб додатка"
+                  width="370"
+                />
                 <p class="thumb__descr">Мобільні додатки</p>
               </div>
             </li>
             <li>
               <div class="thumb">
-                <img src="./images/box3.jpg" alt="Розробка дизайна" width="370" />
+                <img
+                  srcset="./images/box3@1x.jpg 1x, ./images/box3@2x.jpg 2x"
+                  src="./images/box3@1x.jpg"
+                  alt="Розробка дизайна"
+                  width="370"
+                />
                 <p class="thumb__descr">Дизайнерські рішення</p>
               </div>
             </li>
@@ -420,7 +460,7 @@
             <a href="#" class="logo footer__logo"><span class="logo__color">Web</span>Studio</a>
             <address class="address">
               <ul>
-                <li>
+                <li class="address-item">
                   <a
                     href="https://goo.gl/maps/CUmirf4CLt4Hmm4W9"
                     class="address__map"
@@ -429,12 +469,12 @@
                     >м. Київ, пр-т Лесі Українки, 26</a
                   >
                 </li>
-                <li>
+                <li class="address-item">
                   <a href="mailto:info@devstudio.com" class="address__contacts"
                     >info@devstudio.com</a
                   >
                 </li>
-                <li>
+                <li class="address-item">
                   <a href="tel:+380961111111" class="address__contacts">+38 (096) 111 11 11</a>
                 </li>
               </ul>
