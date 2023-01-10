@@ -297,9 +297,9 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 10px;
 }
 .mob-social__item:not(:last-child) {
+  margin-right: 10px;
   border-right: 1px solid rgba(33, 33, 33, 0.2);
 }
 .mob-social__link {
